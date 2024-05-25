@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Admin Dashboard</title>
+        <!-- Montserrat Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.2-web/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    </head>
+    <body>
+        <div class="grid-container">
+            <!-- Header -->
+            <header class="header">
+                <div class="menu-icon" onclick="openSidebar()">
+                    <span class="material-icons-outlined">menu</span>
+                </div>
+            </header>
+            <!-- End Header -->
+            <!-- Sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-title">
+                    <div class="sidebar-brand">
+                        <span class="material-icons-outlined">shopping_cart</span>
+                        Team 5
+                    </div>
+                    <span class="material-icons-outlined" onclick="closeSidebar()">close</span>
+                </div>
+                <ul class="sidebar-list">
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">dashboard</span>
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">poll</span>
+                            Dataset
+                        </a>
+                    </li>
+                    <li class="sidebar-list-item">
+                        <a href="#" target="_blank">
+                            <span class="material-icons-outlined">settings</span>
+                            Exit
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+            <!-- End Sidebar -->
+            <!-- Main -->
+            <main class="main-container">
+                <div class="main-title">
+                    <h2>DASHBOARD</h2>
+                </div>
+                <div class="main-cards">
+                    <div class="cards-wan">
+                        <div class="box-wan">
+                            <div class="main-wan-title">
+                                <div class="main-title-number">
+                                    <div class="box-title">Revenue</div>
+                                    <div class="main-title-number" id="revenue"></div>
+                                </div>
+                                <div class="main-title-icon">
+                                    <i class="fa-duotone fa-sack-dollar"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-wan">
+                            <div class="main-wan-title">
+                                <div class="main-title-number">
+                                    <div class="box-title">Profit</div>
+                                    <div class="main-title-number" id="profit">
+                                        <!-- 11,9 jt --></div>
+                                </div>
+                                <div class="main-title-icon">
+                                    <i class="fa-duotone fa-chart-line-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-wan">
+                            <div class="main-wan-title">
+                                <div class="main-title-number">
+                                    <div class="box-title">Item Sold</div>
+                                    <div class="main-title-number" id="itemSold">
+                                        <!-- 645,1 rb --></div>
+                                </div>
+                                <div class="main-title-icon">
+                                    <i class="fa-duotone fa-cart-arrow-up"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cards-tow">
+                        <div class="box-tow-bar">
+                            <div class="box-title-tow">
+                                Sales by Product Category and Country
+                            </div>
+                            <div id="bar-grub"></div>
+                        </div>
+                    </div>
+                    <div class="cards-tree">
+                        <div class="box-tree">
+                            <p>Age Group Distribution by Revenue</p>
+                            <div class="box-pie-chart" id="pie-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-line">
+                    <div class="cards-line-wan">
+                        <div class="box-line-wan">
+                            <div class="box-line-title">
+                                Gender Distribution by Country and Revenue
+                            </div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="cards-line-tow">
+                        <style>
+                            table{
+                                border-collapse: collapse;
+                                width: 100%;
+                                text-align: left;
+                                font-size: .8rem;
+                                border: 1px solid gray;
+                                color : black;
+                            }
+                            thead tr th  {
+                                background: gray;
+                                padding: 5px;
+                            }
+                            tbody tr td{
+                                padding: 5px;
+                                font-size: .7rem
+                            }
+                            tr{
+                                border-bottom: 1px solid red;
+                            }
+                        </style>
+                        <div class="box-tabel">
+                            <table id="myTable" class="display">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>County</th>
+                                        <th>Product</th>
+                                        <th>Profit</th>
+                                        <th>Item Sold</th>
+                                        <th>Revenue</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tableBody">
+                                    <!-- <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                    </tr> --></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!-- End Main -->
+        </div>
+        <!-- Scripts -->
+        <!-- ApexCharts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+        </script>
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
+        <script src="js/bar-grup.js"></script>
+        <script src="js/pie-charts.js"></script>
+        <script src="js/bar-line-y.js"></script>
+        <script src="js/revenue.js"></script>
+        <script src="js/profit.js"></script>
+        <script src="js/item_sold.js"></script>
+        <script src="js/tabel_data.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+        <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    </body>
+</html>
