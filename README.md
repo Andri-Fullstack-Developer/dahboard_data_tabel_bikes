@@ -2,7 +2,11 @@
 
 This is a responsive sales dashboard built using **HTML 5**, **CSS 3**, and **JavaScript**. Charts were built using **ApexCharts 3**.
 
+<<<<<<< HEAD
 ![plot](https://andri-fullstack-developer.github.io/dahboard_data_tabel_bikes/)
+=======
+(https://andri-fullstack-developer.github.io/dahboard_data_tabel_bikes/)
+>>>>>>> 75eeb3c085f48d342b1debeca6c95b4051baa2d3
 
 ## Table of Contents
 
