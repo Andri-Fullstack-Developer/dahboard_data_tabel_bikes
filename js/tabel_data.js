@@ -4,7 +4,7 @@ $(document).ready(function () {
     pagingType: "simple_numbers", // Menampilkan nomor halaman sederhana (1, 2, 3, ...)
   });
 });
-const csvFile_tabelData = "../capstone_team_5_data _leaning.csv";
+const csvFile_tabelData = "capstone_team_5_data _leaning.csv";
 
 $.get(csvFile_tabelData, (data) => {
   const rows = data.split("\n");
