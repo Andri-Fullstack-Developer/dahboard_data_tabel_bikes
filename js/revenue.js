@@ -1,4 +1,4 @@
-const csvFile = "capstone_team_5_data _leaning.csv";
+const csvFile = "../capstone_team_5_data _leaning.csv";
 $.get(csvFile, (data) => {
   function parseCSV(data) {
     const lines = data.split("\n");
