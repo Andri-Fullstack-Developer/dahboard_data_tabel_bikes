@@ -116,9 +116,10 @@ body {
 
 .main-cards {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 1fr;
+  grid-template-columns: 0.8fr 2fr 1fr;
   gap: 15px;
   margin: 20px 0;
+  /* background-color: red; */
 }
 
 .main-line {
@@ -400,6 +401,10 @@ body {
     grid-template-columns: 1fr;
     margin-top: 30px;
   }
+  .box-line-wan {
+    width: 70%;
+    height: 100%;
+  }
   .box-line-title {
     font-size: 0.6rem;
     top: -10px;
@@ -407,6 +412,9 @@ body {
   .box-title-tow {
     font-size: 0.6rem;
     left: 10px;
+  }
+  #myChart {
+    width: 10%;
   }
 }
 
